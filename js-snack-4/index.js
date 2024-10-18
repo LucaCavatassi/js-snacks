@@ -1,16 +1,8 @@
-const str = "racecar";
-const str2 = "hello";
+const input = "hello";
 
-
-function isPalindrome (str) {
-    let reversed = str.split('').reverse().join('');
-    
-    if (str === reversed) {
-        return console.log(true);
-    } else {
-        return console.log(false);
-    }
+function reverseString(str) {
+    console.log(str.split('').reverse().join(''))
 }
-isPalindrome(str);
-isPalindrome(str2);
+
+reverseString(input); // "olleh"
 
