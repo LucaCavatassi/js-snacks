@@ -1,12 +1,19 @@
-// 4.	Verifica palindromi
-// Scrivi una funzione èPalindromo che accetta una stringa e restituisce true se la stringa è un palindromo (uguale sia da sinistra a destra che viceversa) e false altrimenti.
+// 5.	Filtrare valori duplicati
+// Scrivi una funzione rimuoviDuplicati che accetta un array e restituisce un nuovo array senza i valori duplicati.
 
-function èPalindromo(str) {
-    if (str.split("").reverse().join("") === str) {
-        return true;
-    } else {
-        return false;
+function rimuoviDuplicati(arr) {
+    let result = [];
+    arr.reduce((prev, curr) => {
+        if (prev !== curr) {
+            result.push(prev)
+        }
+        return curr
+    })
+
+    if (arr.length > 0) {
+        result.push(arr[arr.length - 1]);
     }
+    
+    return result
 }
-console.log(èPalindromo("anna")); // true
-console.log(èPalindromo("ciao")); // false
+console.log(rimuoviDuplicati([1, 2, 2, 3, 4, 4, 5])); // [1, 2, 3, 4, 5]
