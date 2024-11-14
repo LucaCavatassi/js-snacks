@@ -72,23 +72,56 @@
 // Crea una classe Animale con un metodo verso() che restituisce "Un suono generico". 
 // Crea poi due classi Cane e Gatto che estendono Animale e sovrascrivono il metodo verso() per restituire rispettivamente "Woof!" e "Miao!".
 
-class Animale{
-    verso() {
-        return 'Un suono generico';
+// class Animale{
+//     verso() {
+//         return 'Un suono generico';
+//     }
+// }
+
+// class Cane extends Animale {
+//     verso() {
+//         return 'Woof!'
+//     }
+// }
+
+// class Gatto extends Animale {
+//     verso() {
+//         return 'Miao!'
+//     }
+// }
+
+// const animali = [new Cane(), new Gatto()];
+// animali.forEach(animale => console.log(animale.verso()));
+
+// Esercizio 5: Classe con Metodo Statico
+
+// Crea una classe Calcolatrice con un metodo statico somma(a, b)
+// che accetta due numeri e restituisce la loro somma.
+
+
+// class Calcolatrice {
+//     static somma(a, b) {
+//         return a + b;
+//     }
+// }
+
+// console.log(Calcolatrice.somma(5, 3)); // 8 
+
+// Esercizio 6: Contatore di Oggetti
+
+// Crea una classe Veicolo che tenga traccia di quanti veicoli sono stati creati utilizzando un attributo statico. 
+// Ogni volta che viene creato un nuovo veicolo, il contatore dovrebbe aumentare.
+class Veicolo {
+    // Aggiungi un contatore statico che parte da 0
+    static contatore = 0;
+
+    constructor() {
+        // Incrementa il contatore ogni volta che viene creato un nuovo veicolo
+        Veicolo.contatore++;
+    }
+
+    // Metodo statico per ottenere il valore del contatore
+    static contaVeicoli() {
+        return Veicolo.contatore;
     }
 }
-
-class Cane extends Animale {
-    verso() {
-        return 'Woof!'
-    }
-}
-
-class Gatto extends Animale {
-    verso() {
-        return 'Miao!'
-    }
-}
-
-const animali = [new Cane(), new Gatto()];
-animali.forEach(animale => console.log(animale.verso()));
