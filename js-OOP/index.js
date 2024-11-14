@@ -7,17 +7,29 @@
 
 class Persona {
     constructor(nome, eta) {
-        this.eta = eta;
+        this._eta = eta;
         this.nome = nome;
     }
 
     saluta() {
-        return `Ciao mi chiamo ${this.nome} e ho ${this.eta} anni.`
+        return `Ciao mi chiamo ${this.nome} e ho ${this._eta} anni.`
     }
+
+    get eta() {
+        return this._eta;
+    }
+
+    set eta(eta) {
+        if (eta <= 0) {
+            console.log('Eta deve essere positiva');
+        } else {
+            this._eta = eta
+        }
+    } 
 }
 
-const persona1 = new Persona("Luca", 29);
-const persona2 = new Persona("Francesca", 31);
+// const persona1 = new Persona("Luca", 29);
+// const persona2 = new Persona("Francesca", 31);
 
 // console.log(persona1.saluta());
 // console.log(persona2.saluta());
@@ -39,6 +51,19 @@ class Studente extends Persona {
     }
 }
 
-const studente1 = new Studente("Anna", 22, "Informatica");
-console.log(studente1.saluta()); // "Ciao, mi chiamo Anna e ho 22 anni."
-console.log(studente1.infoCorso()); // "Sto studiando Informatica."
+// const studente1 = new Studente("Anna", 22, "Informatica");
+// console.log(studente1.saluta()); // "Ciao, mi chiamo Anna e ho 22 anni."
+// console.log(studente1.infoCorso()); // "Sto studiando Informatica."
+
+// Esercizio 3: Incapsulamento con Getter e Setter
+// Modifica la classe Persona per includere una proprietà privata _eta e usa getter e setter per accedere e modificare eta, assicurandoti che l’età possa essere impostata solo se positiva.
+
+const persona2 = new Persona("Marco", 30);
+console.log(persona2.eta); // 30
+
+persona2.eta = -5; // Non dovrebbe cambiare l'età
+console.log(persona2.eta); // 30
+
+persona2.eta = 32; // Dovrebbe aggiornare l'età
+console.log(persona2.eta); // 32
+console.log(persona2.saluta());
