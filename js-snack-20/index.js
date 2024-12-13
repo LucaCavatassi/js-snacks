@@ -46,3 +46,21 @@ function oddFilter(arr) {
     return response
 }
 console.log(oddFilter(numbers));
+
+// 4. Trova il Primo Elemento Duplicato
+
+// Scrivi una funzione che accetti un array e restituisca il primo elemento duplicato che incontra. Se non ci sono duplicati, restituisci null.
+const array = [2, 5, 3, 5, 7, 3];
+
+function findFirstDuplicate(arr) {
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = i + 1; j < arr.length; j++) {
+            if (arr[i] === arr[j]) {
+                return arr[i]; // Restituisci il primo duplicato trovato
+            }
+        }
+    }
+    return null; // Nessun duplicato trovato
+}
+
+console.log(findFirstDuplicate(array));
