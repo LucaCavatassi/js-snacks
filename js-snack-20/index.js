@@ -64,3 +64,18 @@ function findFirstDuplicate(arr) {
 }
 
 console.log(findFirstDuplicate(array));
+
+// Funzione fattoriale
+
+const n = 5;
+
+function factor(num) {
+    let result = 1;
+    for (let i = num; i > 0; i--) {
+        result *= i
+    }
+    console.log(result);
+    return result
+}
+
+factor(n)
