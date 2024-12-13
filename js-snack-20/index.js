@@ -34,3 +34,15 @@ function wordCounter(str) {
 }
 
 console.log(wordCounter(text));
+
+// Filtra numeri pari 
+
+const numbers = [1, 2, 3, 4, 5, 6];
+
+function oddFilter(arr) {
+    const response = arr.filter((number) =>
+        number % 2 === 0
+    )
+    return response
+}
+console.log(oddFilter(numbers));
