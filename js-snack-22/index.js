@@ -39,18 +39,30 @@
 //     return `${user.name} ha ${user.age} anni e vive a ${user.city}.`
 // }
 
-function printInput() {
-    const inputField = document.getElementById('userInput');
-    const outputParagraph = document.getElementById('output');
+// function printInput() {
+//     const inputField = document.getElementById('userInput');
+//     const outputParagraph = document.getElementById('output');
 
-    if (inputField && outputParagraph) {
-        outputParagraph.textContent = inputField.value.trim(); // Rimuove spazi bianchi extra
-    }
+//     if (inputField && outputParagraph) {
+//         outputParagraph.textContent = inputField.value.trim(); // Rimuove spazi bianchi extra
+//     }
+// }
+
+// document.addEventListener("DOMContentLoaded", () => {
+//     const btn = document.getElementById('submitBtn');
+//     if (btn) {
+//         btn.addEventListener('click', printInput);
+//     }
+// });
+
+async function fetchPost() {
+    const response = await fetch("https://jsonplaceholder.typicode.com/posts");
+    const posts = await response.json();
+
+    const h2 = document.createElement('h2')
+    h2.textContent = posts[0].title
+    document.body.appendChild(h2);
+    
+    // Mostra il titolo del primo post in una <h2>
 }
-
-document.addEventListener("DOMContentLoaded", () => {
-    const btn = document.getElementById('submitBtn');
-    if (btn) {
-        btn.addEventListener('click', printInput);
-    }
-});
+fetchPost()
