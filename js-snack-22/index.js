@@ -67,13 +67,27 @@
 // }
 // fetchPost()
 
-function sumArray(arr) {
+// function sumArray(arr) {
+//     let counter = 0;
+//     for (let i = 0; i < arr.length; i++) {
+//         counter += arr[i];
+//     }
+//     return counter
+// }
+
+// // Test
+// console.log(sumArray([1, 2, 3, 4, 5])); // Output previsto: 15
+
+function countVowels(str) {
+    const arr = str.split('');
     let counter = 0;
     for (let i = 0; i < arr.length; i++) {
-        counter += arr[i];
+        if(arr[i] === 'a' || arr[i] === 'e' || arr[i] === 'i' || arr[i] === 'o' || arr[i] === 'u'){
+            counter += 1
+        };
     }
     return counter
 }
 
 // Test
-console.log(sumArray([1, 2, 3, 4, 5])); // Output previsto: 15
+console.log(countVowels("javascript")); // Output previsto: 3
