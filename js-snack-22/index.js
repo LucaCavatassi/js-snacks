@@ -29,12 +29,28 @@
 // });
   // Aggiungi l'event listener per cambiare colore allo sfondo
 
-const user = {
-    name: "Luca",
-    age: 30,
-    city: "Milano"
-};
+// const user = {
+//     name: "Luca",
+//     age: 30,
+//     city: "Milano"
+// };
 
-function formatData(user) {
-    return `${user.name} ha ${user.age} anni e vive a ${user.city}.`
+// function formatData(user) {
+//     return `${user.name} ha ${user.age} anni e vive a ${user.city}.`
+// }
+
+function printInput() {
+    const inputField = document.getElementById('userInput');
+    const outputParagraph = document.getElementById('output');
+
+    if (inputField && outputParagraph) {
+        outputParagraph.textContent = inputField.value.trim(); // Rimuove spazi bianchi extra
+    }
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    const btn = document.getElementById('submitBtn');
+    if (btn) {
+        btn.addEventListener('click', printInput);
+    }
+});
