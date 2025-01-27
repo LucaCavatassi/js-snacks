@@ -55,14 +55,25 @@
 //     }
 // });
 
-async function fetchPost() {
-    const response = await fetch("https://jsonplaceholder.typicode.com/posts");
-    const posts = await response.json();
+// async function fetchPost() {
+//     const response = await fetch("https://jsonplaceholder.typicode.com/posts");
+//     const posts = await response.json();
 
-    const h2 = document.createElement('h2')
-    h2.textContent = posts[0].title
-    document.body.appendChild(h2);
+//     const h2 = document.createElement('h2')
+//     h2.textContent = posts[0].title
+//     document.body.appendChild(h2);
     
-    // Mostra il titolo del primo post in una <h2>
+//     // Mostra il titolo del primo post in una <h2>
+// }
+// fetchPost()
+
+function sumArray(arr) {
+    let counter = 0;
+    for (let i = 0; i < arr.length; i++) {
+        counter += arr[i];
+    }
+    return counter
 }
-fetchPost()
+
+// Test
+console.log(sumArray([1, 2, 3, 4, 5])); // Output previsto: 15
