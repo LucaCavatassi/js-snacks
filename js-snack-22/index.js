@@ -78,16 +78,41 @@
 // // Test
 // console.log(sumArray([1, 2, 3, 4, 5])); // Output previsto: 15
 
-function countVowels(str) {
-    const arr = str.split('');
-    let counter = 0;
-    for (let i = 0; i < arr.length; i++) {
-        if(arr[i] === 'a' || arr[i] === 'e' || arr[i] === 'i' || arr[i] === 'o' || arr[i] === 'u'){
-            counter += 1
-        };
+// function countVowels(str) {
+//     const arr = str.split('');
+//     let counter = 0;
+//     for (let i = 0; i < arr.length; i++) {
+//         if(arr[i] === 'a' || arr[i] === 'e' || arr[i] === 'i' || arr[i] === 'o' || arr[i] === 'u'){
+//             counter += 1
+//         };
+//     }
+//     return counter
+// }
+
+// // Test
+// console.log(countVowels("javascript")); // Output previsto: 3
+
+// function reverseString(str) {
+//    return str.split('').reverse().join('')
+// }
+
+// // Test
+// console.log(reverseString("hello")); // Output previsto: "olleh"
+
+function addItem() {
+    const inputField = document.getElementById('itemInput');
+    const outputList = document.getElementById('list');
+
+    if (inputField.value.length > 0) {
+        const li = document.createElement('li');
+        li.innerText = inputField.value
+        outputList.appendChild(li);
+        inputField.value = '';
+    } else {
+        alert('type something')
     }
-    return counter
 }
 
-// Test
-console.log(countVowels("javascript")); // Output previsto: 3
+document.getElementById('submitBtn').addEventListener('click', addItem);
+
+// Associa l'evento al pulsante
