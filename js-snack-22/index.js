@@ -99,20 +99,41 @@
 // // Test
 // console.log(reverseString("hello")); // Output previsto: "olleh"
 
-function addItem() {
-    const inputField = document.getElementById('itemInput');
-    const outputList = document.getElementById('list');
+// function addItem() {
+//     const inputField = document.getElementById('itemInput');
+//     const outputList = document.getElementById('list');
 
-    if (inputField.value.length > 0) {
-        const li = document.createElement('li');
-        li.innerText = inputField.value
-        outputList.appendChild(li);
-        inputField.value = '';
+//     if (inputField.value.length > 0) {
+//         const li = document.createElement('li');
+//         li.innerText = inputField.value
+//         outputList.appendChild(li);
+//         inputField.value = '';
+//     } else {
+//         alert('type something')
+//     }
+// }
+
+// document.getElementById('submitBtn').addEventListener('click', addItem);
+
+// // Associa l'evento al pulsante
+
+function isPrime(n) {
+    let isPrime = true;
+
+    if (n <= 1) {
+        isPrime = false;
     } else {
-        alert('type something')
+        for (let i = 2; i < n; i++) {
+            if (n % i === 0) {
+                isPrime = false;
+                break;
+            }
+        }
     }
+
+    return isPrime;
 }
 
-document.getElementById('submitBtn').addEventListener('click', addItem);
-
-// Associa l'evento al pulsante
+// Test
+console.log(isPrime(7));  // Output previsto: true
+console.log(isPrime(10)); 
