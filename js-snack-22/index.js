@@ -275,3 +275,27 @@ function changeImg() {
 document.getElementById('box').addEventListener('click', function() {
     document.getElementById('box').innerText = 'You clicked me!'
 });
+
+
+// Exercise 8: Create a Dynamic List
+
+// Task: Create a function that dynamically generates a list of 5 items and appends them to a <ul> element with the ID "dynamic-list". Each list item should have the text "Item X".
+
+function generateList() {
+    let ul = document.getElementById('dynamic-list')
+    for(let i = 1; i <= 5; i++ ) {
+        let li = document.createElement('li');
+        li.innerText = `Item ${i}`;
+        ul.appendChild(li);
+    }
+}
+
+document.getElementById('btn').addEventListener('click', modifyValue);
+
+// Exercise 9: Modify Input Value
+
+// Task: Write a function that changes the value of an <input> element with the ID "username" to "JohnDoe" when a button is clicked.
+
+function modifyValue() {
+    document.getElementById('username').setAttribute('value','John Doe');
+}
