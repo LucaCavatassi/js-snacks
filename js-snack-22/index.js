@@ -138,68 +138,108 @@
 // console.log(isPrime(7));  // Output previsto: true
 // console.log(isPrime(10)); 
 
-function fizzBuzz() {
-    for (let i = 1; i <= 100;  i++) {
-        if (i % 3 === 0 && i % 5 === 0) {
-            console.log('fizzBuzz')
-        } else if (i % 3 === 0) {
-            console.log('fizz')
-        } else if (i % 5 === 0) {
-            console.log('buzz')
-        } else {
-            console.log(i);
-        }
-    }
-}
+// function fizzBuzz() {
+//     for (let i = 1; i <= 100;  i++) {
+//         if (i % 3 === 0 && i % 5 === 0) {
+//             console.log('fizzBuzz')
+//         } else if (i % 3 === 0) {
+//             console.log('fizz')
+//         } else if (i % 5 === 0) {
+//             console.log('buzz')
+//         } else {
+//             console.log(i);
+//         }
+//     }
+// }
 
 
-function findMissin(arr) {
-    for (let i = 0; i < arr.length - 1; i++) {
-        if (arr[i] + 1 !== arr[i + 1]) {
-            return arr[i] + 1;
-        }
-    }
+// function findMissin(arr) {
+//     for (let i = 0; i < arr.length - 1; i++) {
+//         if (arr[i] + 1 !== arr[i + 1]) {
+//             return arr[i] + 1;
+//         }
+//     }
 
-    return null; // Se non manca nessun numero
-}
-let arr = [1, 2, 3, 5, 6]
-findMissin(arr);
+//     return null; // Se non manca nessun numero
+// }
+// let arr = [1, 2, 3, 5, 6]
+// findMissin(arr);
 
-function reverseNo(str) {
-    const arr = str.split('')
-    let reverseWord = ''
-    for (let i = arr.length - 1; i >= 0; i--) {
-        reverseWord += arr[i];
-    }
-    return reverseWord;
-}
-let str = 'hello'
-reverseNo(str);
+// function reverseNo(str) {
+//     const arr = str.split('')
+//     let reverseWord = ''
+//     for (let i = arr.length - 1; i >= 0; i--) {
+//         reverseWord += arr[i];
+//     }
+//     return reverseWord;
+// }
+// let str = 'hello'
+// reverseNo(str);
 
 
-function checkPalindrom (str) {
-    let formatStr = str.toLowerCase().trim().split(' ').join('');
-    let reverseStr = formatStr.split('').reverse().join('');
+// function checkPalindrom (str) {
+//     let formatStr = str.toLowerCase().trim().split(' ').join('');
+//     let reverseStr = formatStr.split('').reverse().join('');
     
-    if (formatStr === reverseStr){
-        return console.log(true)
-    } else {
-        return console.log(false)
-    }; 
+//     if (formatStr === reverseStr){
+//         return console.log(true)
+//     } else {
+//         return console.log(false)
+//     }; 
+// }
+
+// let str2 = "A man a plan a canal Panama"
+
+// checkPalindrom(str2);
+
+
+// // Define a function called 'searchData' that logs a message to the console
+// function searchData() {
+//     console.log("searchData executed");
+// }
+
+// // Create a new debounced version of the 'searchData' function with a delay of 3000 milliseconds (3 seconds)
+// const debouncedSearchData = debounce(searchData, 3000);
+
+// // Call the debounced version of 'searchData'
+// debouncedSearchData();
+
+// Exercise 1: Change Text Content
+
+// Task: Create a button that changes the text of a <div> with the ID "message" to "Hello, DOM!" when clicked.
+// Hint: Use document.getElementById("message").textContent = "Hello, DOM!".
+
+function changeText() {
+    return document.getElementById('message').textContent = 'Hello, DOM!';
 }
 
-let str2 = "A man a plan a canal Panama"
+// Exercise 2: Change Styles
 
-checkPalindrom(str2);
+// Task: Write a function that changes the background color of a <p> tag with the class "highlight" to "yellow" when clicked.
 
-
-// Define a function called 'searchData' that logs a message to the console
-function searchData() {
-    console.log("searchData executed");
+function changeP(){
+    let p = document.querySelectorAll('.highlight') 
+    p.forEach(element => {
+        element.style.backgroundColor = 'yellow';
+    });
 }
 
-// Create a new debounced version of the 'searchData' function with a delay of 3000 milliseconds (3 seconds)
-const debouncedSearchData = debounce(searchData, 3000);
+// Exercise 3: Add a New Element
 
-// Call the debounced version of 'searchData'
-debouncedSearchData();
+// Task: Create a button that adds a new <li> element with the text "New Item" to an unordered list with the ID "list".
+
+function addLi() {
+    let li = document.createElement('li');
+    let list = document.getElementById('list');
+    li.innerText = 'New Item'
+    list.appendChild(li)
+}
+// Exercise 4: Remove an Element
+
+// Task: Write a function that removes the first <li> element from a list with the ID "list".
+// Hint: Use document.querySelector("li").remove(); or list.removeChild(list.firstChild).
+function removeLi() {
+    let list = document.getElementById('list');
+    list.removeChild(list.firstChild);
+}
+
