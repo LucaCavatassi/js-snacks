@@ -243,3 +243,19 @@ function removeLi() {
     list.removeChild(list.firstChild);
 }
 
+// Exercise 5: Toggle Class
+
+// Task: Create a button that toggles the "active" class on a <div> with the ID "box".
+
+function toggleClass() {
+    let box = document.getElementById('box');
+    console.log(box);
+    
+    if (box.classList.contains('active')) {
+        box.classList.remove('active');
+    } else {
+        box.classList.add('active')
+    }
+}
+
+document.getElementById('btn').addEventListener('click', toggleClass);
