@@ -117,23 +117,89 @@
 
 // // Associa l'evento al pulsante
 
-function isPrime(n) {
-    let isPrime = true;
+// function isPrime(n) {
+//     let isPrime = true;
 
-    if (n <= 1) {
-        isPrime = false;
-    } else {
-        for (let i = 2; i < n; i++) {
-            if (n % i === 0) {
-                isPrime = false;
-                break;
-            }
+//     if (n <= 1) {
+//         isPrime = false;
+//     } else {
+//         for (let i = 2; i < n; i++) {
+//             if (n % i === 0) {
+//                 isPrime = false;
+//                 break;
+//             }
+//         }
+//     }
+
+//     return isPrime;
+// }
+
+// // Test
+// console.log(isPrime(7));  // Output previsto: true
+// console.log(isPrime(10)); 
+
+function fizzBuzz() {
+    for (let i = 1; i <= 100;  i++) {
+        if (i % 3 === 0 && i % 5 === 0) {
+            console.log('fizzBuzz')
+        } else if (i % 3 === 0) {
+            console.log('fizz')
+        } else if (i % 5 === 0) {
+            console.log('buzz')
+        } else {
+            console.log(i);
+        }
+    }
+}
+
+
+function findMissin(arr) {
+    for (let i = 0; i < arr.length - 1; i++) {
+        if (arr[i] + 1 !== arr[i + 1]) {
+            return arr[i] + 1;
         }
     }
 
-    return isPrime;
+    return null; // Se non manca nessun numero
+}
+let arr = [1, 2, 3, 5, 6]
+findMissin(arr);
+
+function reverseNo(str) {
+    const arr = str.split('')
+    let reverseWord = ''
+    for (let i = arr.length - 1; i >= 0; i--) {
+        reverseWord += arr[i];
+    }
+    return reverseWord;
+}
+let str = 'hello'
+reverseNo(str);
+
+
+function checkPalindrom (str) {
+    let formatStr = str.toLowerCase().trim().split(' ').join('');
+    let reverseStr = formatStr.split('').reverse().join('');
+    
+    if (formatStr === reverseStr){
+        return console.log(true)
+    } else {
+        return console.log(false)
+    }; 
 }
 
-// Test
-console.log(isPrime(7));  // Output previsto: true
-console.log(isPrime(10)); 
+let str2 = "A man a plan a canal Panama"
+
+checkPalindrom(str2);
+
+
+// Define a function called 'searchData' that logs a message to the console
+function searchData() {
+    console.log("searchData executed");
+}
+
+// Create a new debounced version of the 'searchData' function with a delay of 3000 milliseconds (3 seconds)
+const debouncedSearchData = debounce(searchData, 3000);
+
+// Call the debounced version of 'searchData'
+debouncedSearchData();
