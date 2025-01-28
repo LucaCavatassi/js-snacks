@@ -290,14 +290,12 @@ function generateList() {
     }
 }
 
-document.getElementById('btn').addEventListener('click', createForm);
-
 // Exercise 9: Modify Input Value
 
 // Task: Write a function that changes the value of an <input> element with the ID "username" to "JohnDoe" when a button is clicked.
 
 function modifyValue() {
-    document.getElementById('username').setAttribute('value','John Doe');
+    document.getElementById('username').value = 'john doe';
 }
 
 // Exercise 10: Create and Append a Form
@@ -317,3 +315,18 @@ function createForm() {
     document.body.appendChild(button);
 
 }
+
+// Extra Challenge:
+
+// Task: Create a button that, when clicked, hides or shows a <div> with the class "content" by toggling the display style between "none" and "block".
+
+function showHide() {
+    let box = document.getElementById('box') 
+    if (box.style.display === 'block') {  // Fix the comparison operator
+        box.style.display = 'none';
+    } else {
+        box.style.display = 'block';
+    }
+}
+
+document.getElementById('btn').addEventListener('click', showHide);
