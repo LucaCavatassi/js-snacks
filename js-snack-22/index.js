@@ -258,4 +258,13 @@ function toggleClass() {
     }
 }
 
-document.getElementById('btn').addEventListener('click', toggleClass);
+document.getElementById('btn').addEventListener('click', changeImg);
+
+// Exercise 6: Change Image Source
+
+// Task: Write a function that changes the source of an <img> tag with the ID "image" to a new URL when a button is clicked.
+
+function changeImg() {
+    let img = document.getElementById('image');
+    img.setAttribute('src', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2R_yOMZO2KcgMYrNS7WXQ_oiOiUM1e6aa0Q&s');
+}
