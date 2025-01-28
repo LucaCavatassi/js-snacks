@@ -258,8 +258,6 @@ function toggleClass() {
     }
 }
 
-document.getElementById('btn').addEventListener('click', changeImg);
-
 // Exercise 6: Change Image Source
 
 // Task: Write a function that changes the source of an <img> tag with the ID "image" to a new URL when a button is clicked.
@@ -268,3 +266,12 @@ function changeImg() {
     let img = document.getElementById('image');
     img.setAttribute('src', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2R_yOMZO2KcgMYrNS7WXQ_oiOiUM1e6aa0Q&s');
 }
+
+// Exercise 7: Add Event Listener
+
+// Task: Create a button that adds an event listener to a <div> with the class "box", so that when the <div> is clicked, its text content changes to "You clicked me!".
+// Hint: Use element.addEventListener("click", function() {...});.
+
+document.getElementById('box').addEventListener('click', function() {
+    document.getElementById('box').innerText = 'You clicked me!'
+});
