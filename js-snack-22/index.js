@@ -290,7 +290,7 @@ function generateList() {
     }
 }
 
-document.getElementById('btn').addEventListener('click', modifyValue);
+document.getElementById('btn').addEventListener('click', createForm);
 
 // Exercise 9: Modify Input Value
 
@@ -298,4 +298,22 @@ document.getElementById('btn').addEventListener('click', modifyValue);
 
 function modifyValue() {
     document.getElementById('username').setAttribute('value','John Doe');
+}
+
+// Exercise 10: Create and Append a Form
+
+// Task: Write a function that creates a form with a text input, a checkbox, and a submit button. Append this form to the body of the document.
+
+function createForm() {
+    let input = document.createElement('input');
+    let checkbox = document.createElement('input');
+    checkbox.setAttribute('type', 'checkbox');
+    let button = document.createElement('button');
+    button.setAttribute('type', 'submit');
+    button.innerHTML = 'submit'
+    
+    document.body.appendChild(input);
+    document.body.appendChild(checkbox);
+    document.body.appendChild(button);
+
 }
