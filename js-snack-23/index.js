@@ -51,17 +51,22 @@
 //     return result
 // }
 
-function nbYear(p0, percent, aug, p) {
-    let result = 0;
-    do {
-        let yearIncrement = Math.floor(((p0 / 100) * percent) + aug);
-        p0 += yearIncrement
-        result++
-    } while (p0 < p);    
+// function nbYear(p0, percent, aug, p) {
+//     let result = 0;
+//     do {
+//         let yearIncrement = Math.floor(((p0 / 100) * percent) + aug);
+//         p0 += yearIncrement
+//         result++
+//     } while (p0 < p);    
 
-    console.log(result);
+//     console.log(result);
     
-    return result;
-}
+//     return result;
+// }
 
-nbYear(1000, 2.0, 50, 1214)
+// nbYear(1000, 2.0, 50, 1214)
+
+
+function findGlasses(arr) {
+    return arr.findIndex(word => /O-+O/.test(word));
+}
