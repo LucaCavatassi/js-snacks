@@ -34,8 +34,6 @@ const gridPosition = (name, position) => {
 
     if (rowIndex === 0) {
         secondWord = 'front'
-    } else if (rowIndex === rows.length - 1) {
-        secondWord = 'last'
     } else if (rowIndex + 1 === 2) {
         secondWord = '2nd'
     } else if (rowIndex + 1 === 3) {
